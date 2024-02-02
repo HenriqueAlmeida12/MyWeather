@@ -19,6 +19,30 @@
     color: var(--logo-white);
     text-shadow: 2px 2px 1px var(--logo-shadow);
 }
+.header_search{
+    width: 50%;
+}
+.header_search-input{
+    border: none;
+    border-radius: 24px;
+    color: var(--white);
+    font-size: 0.875rem;
+    padding: 10px 2% 10px 8%;
+    width: 100%;
+    text-align: left;
+    margin-top: 1.5%;
+    background: url("assets/Lupa.svg") no-repeat left;
+    background-size: 15px;
+    background-position: 3%;
+    box-shadow: 1px 3px 5px 2px #00dcff6e;
+}
+.header_search-input::placeholder{
+    color: var(--white);
+    text-align: center;
+}
+.header_search-input:focus{
+    outline: none;
+}
 input[type="search"]::-webkit-search-clear-button {
     -webkit-appearance: none;
     appearance: none;
@@ -38,7 +62,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .weather-search{
     display: none;
 }
-.weather-search:checked ~ .header_search-box{
+.weather-search:active ~ .header_search-box{
     display: flex;
 }
 .weather-search_label{
@@ -63,7 +87,7 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 45px;
 }
 .weather-input_label{
-    width: 45px;
+    width: 191px;
     height: 45px;
     display: flex;
     justify-content: flex-end;
@@ -87,4 +111,7 @@ input[type="search"]::-webkit-search-cancel-button {
     .weather-search_label{
         display: flex;
     }
+    .weather-input_label{
+        width: 45px;
+}
 }
