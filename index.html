@@ -23,14 +23,39 @@
                 <div class="header_search">
                     <input class="header_search-input" type="search" placeholder="Escolha sua localização.">
                 </div>
-                <input class="weather-search weather-input" id="weather-searchid" type="checkbox">
-                <label class="weather-search_label" for="weather-searchid">
-                    <span class="weather-search_span"></span>
-                </label>
-                <input class="weather-input" id="weather-inputid" type="checkbox">
-                <label class="weather-input_label" for="weather-inputid">
-                    <span class="weather-input_span" v-on:click="changeTemperature()"></span>
-                </label>
+                <div class="header-checkbox">
+                    <input class="weather-search" id="weather-searchid" type="checkbox">
+                    <label class="weather-search_label" for="weather-searchid">
+                        <span class="weather-search_span"></span>
+                    </label>
+                    <section class="header_search-box">
+                        <div class="return">
+                            <input class="search-back" id="search-back" type="checkbox">
+                            <label for="search-back">
+                                <span class="search-back-span"></span>
+                            </label>
+                            <p>Meus locais:</p>
+                        </div>
+                        <div class="input">
+                            <input class="track" id="track" type="checkbox">
+                            <label for="track">
+                                <span class="track-span"></span>
+                            </label>
+                            <div class="box-input">
+                                <input class="header_search-input2" type="search" placeholder="Escolha sua localização.">
+                            </div>
+                            <button class="reset" id="reset-history" type="button">
+                            <label for="reset-history">
+                                <span class="reset-span"></span>
+                            </label>
+                        </div>
+                    </section>
+                    <input class="weather-input" id="weather-inputid" type="checkbox">
+                    <label class="weather-input_label" for="weather-inputid">
+                        <span class="weather-input_span" v-on:click="changeTemperature()"></span>
+                    </label>
+                </div>
+                
             </header>
             <section class="box">
                 <div class="box_local">
@@ -67,7 +92,7 @@
                             <th>Summary</th>
                         </thead>
                         <tbody>
-                            <tr v-for="item in lstTemperatures" :key="item.date">
+                            <tr class="swiper-slide" v-for="item in lstTemperatures" :key="item.date">
                                 <td>{{ item.date }}</td>
 
                                 <td>{{ useFahrenheit ? item.temperatureF : item.temperatureC }}</td>
