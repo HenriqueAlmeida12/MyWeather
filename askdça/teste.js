@@ -21,10 +21,9 @@ $(document).ready(function () {
                     let latitude = position.coords.latitude;
                     let longitude = position.coords.longitude;
 
-                    console.log(position, latitude, longitude);
-                    let local = $.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyD7V5yBfCHhUv2ONFsSOQH3g2eL8lmlAwU`, (data, status) => {
+                    $.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyD7V5yBfCHhUv2ONFsSOQH3g2eL8lmlAwU`, (data, status) => {
                         let x = data.results[5];
-                        let temperature = $.get(`http://api.weatherapi.com/v1/current.json?key=74390f9162f24f94b9414250240202&q=${x.formatted_address}&aqi=no`, (data, status) => {
+                        $.get(`http://api.weatherapi.com/v1/current.json?key=74390f9162f24f94b9414250240202&q=${x.formatted_address}&aqi=no`, (data, status) => {
                             let z = data.current;
                             let lastupdate = z.last_updated;
                             let temperature_C = z.feelslike_c
@@ -33,7 +32,6 @@ $(document).ready(function () {
                             let newTemperature = { date: lastupdate, temperatureC: temperature_C, temperatureF: temperature_F, summary: summary_text, userLocation: data.location.country }
                             this.userTemperature = newTemperature;
                         });
-                        console.log(temperature);
                     });
                 };
 

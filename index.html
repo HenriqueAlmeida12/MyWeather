@@ -48,11 +48,11 @@
                 <div class="hour-date">
                     <p class="climate-status">{{ userTemperature.summary }}</p>
                     <p>&nbsp;-&nbsp;</p>
-                    <p class="week-day">quinta</p>
+                    <p class="week-day">{{ new Date().toLocaleString('pt-br', {weekday:'long'}) }}</p>
                     <p>&nbsp;</p>
-                    <p class="month-day">8</p>
+                    <p class="month-day">{{ new Date().getDate() }}</p>
                     <p>,&nbsp;</p>
-                    <p class="hour">00:56</p>
+                    <p class="hour">{{`${new Date().getHours()}:${new Date().getMinutes()}`}}</p>
                 </div>
                 <div class="app">
                     <table id="weatherForecastTable">
