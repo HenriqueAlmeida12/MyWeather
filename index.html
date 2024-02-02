@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyWeather</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/partly-cloud.png">
     <link rel="stylesheet" href="style.css">
-    <!-- Include Vue.js library -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <script defer src="page.js"></script>
+    <script defer src="askdça/teste.js"></script>
 </head>
-
-<body>
+<body>  
     <section class="body-mask">
         <header class="header">
             <div class="header_logo">
-                <img class="header_logo-img" src="assets/logo2.png" alt="Logo">
+                <img class="header_logo-img" src="assets/logo.png" alt="Logo">
                 <h1 class="header_logo-text">MyWeather</h1>
             </div>
             <div class="header_search">
@@ -34,9 +29,10 @@
             <div class="box_local">
                 <img class="box_local-img" src="assets/sunny.png" alt="ensolarado">
                 <div class="box_local-text">
-                    <h1>Lisboa</h1>
+                    <h1 class="local">Lisboa</h1>
                     <div>
-                        <h2>20º</h2>
+                        <h2 class="temperature-number">20</h2>
+                        <h2>º</h2>
                         <p class="celsius-fahrenheit">C</p>
                     </div>
                 </div>
@@ -45,28 +41,56 @@
                     <p>15º</p>
                 </div>
             </div>
-            <div id="app" class="">
-                <table id="weatherForecastTable" class="min-w-max w-full table-auto ">
-                    <thead>
-                        <tr class="bg-gray-200 text-gray-600 text-sm leading-normal">
-                            <th class="py-3 px-6 text-left">Date</th>
-                            <th class="py-3 px-6 text-left">Temperature</th>
-                            <th class="py-3 px-6 text-left">Summary</th>
-                        </tr>
+            <div class="hour-date">
+                <p class="climate-status">Ensolarado</p>
+                <p>&nbsp;-&nbsp;</p>
+                <p class="week-day">quinta</p>
+                <p>&nbsp;</p>
+                <p class="month-day">8</p>
+                <p>,&nbsp;</p>
+                <p class="hour">00:56</p>
+            </div>
+            <div id="app">
+                <table id="weatherForecastTable">
+                    <thead class="table-title">
+                        <th>Date</th>
+                        <th>Temperature</th>
+                        <th>Summary</th>
                     </thead>
-                    <tbody class="text-gray-600 text-sm font-light">
-                        <tr class="border-b border-gray-200 hover:bg-gray-100" v-for="item in lstTemperatures"
-                            :key="item.date">
-                            <td class="py-3 px-6 text-left whitespace-nowrap">{{ item.date }}</td>
-                            <td class="py-3 px-6 text-left whitespace-nowrap">{{ useFahrenheit ? item.temperatureF :
-                                item.temperatureC }}</td>
-                            <td class="py-3 px-6 text-left whitespace-nowrap">{{ item.summary }}</td>
+                    <tbody>
+                        <tr v-for="item in lstTemperatures" :key="item.date">
+                            <td>{{ item.date }}</td>
+                            
+                            <td>{{ useFahrenheit ? item.temperatureF : item.temperatureC }}</td>
+                            <td><img src="assets/sunny.png" class="imgsun" alt="sunny"></td>
+                            <td>{{ item.summary }}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
     </section>
-</body>
 
+    <script>
+        $(document).ready(function() {
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    lstTemperatures: [],
+                    useFahrenheit: false
+                },
+                mounted: function() {
+                    this.requestWeather();
+                },
+                methods: {
+                    requestWeather: function() {
+                        $.get("http://177.70.248.43:3002/WeatherForecast", (data, status) => {
+                            this.lstTemperatures = data;
+                        });
+                    }
+                }
+            });    
+        });
+    </script>
+</body>
 </html>
