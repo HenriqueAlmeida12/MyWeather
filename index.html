@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <div id="app">
-        <section class="body-mask">
+    <section class="body-mask">
+        <div id="app">
             <header class="header">
                 <div class="header_logo">
                     <img class="header_logo-img" src="assets/logo.png" alt="Logo">
@@ -23,6 +23,10 @@
                 <div class="header_search">
                     <input class="header_search-input" type="search" placeholder="Escolha sua localização.">
                 </div>
+                <input class="weather-search weather-input" id="weather-searchid" type="checkbox">
+                <label class="weather-search_label" for="weather-searchid">
+                    <span class="weather-search_span"></span>
+                </label>
                 <input class="weather-input" id="weather-inputid" type="checkbox">
                 <label class="weather-input_label" for="weather-inputid">
                     <span class="weather-input_span" v-on:click="changeTemperature()"></span>
@@ -32,7 +36,7 @@
                 <div class="box_local">
                     <img class="box_local-img" src="assets/sunny.png" alt="ensolarado">
                     <div class="box_local-text">
-                        <h1 class="local">Localização: {{ userTemperature.userLocation }}</h1>
+                        <h1 class="local">{{ userTemperature.userLocation }}</h1>
                         <div>
                             <h2 class="temperature-number">{{ useFahrenheit ? userTemperature.temperatureF :
                                 userTemperature.temperatureC }}</h2>
@@ -52,7 +56,8 @@
                     <p>&nbsp;</p>
                     <p class="month-day">{{ new Date().getDate() }}</p>
                     <p>,&nbsp;</p>
-                    <p class="hour">{{`${new Date().getHours()}:${new Date().getMinutes()}`}}</p>
+                    <p class="hour">{{`${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, '0')}`
+                    }}</p>
                 </div>
                 <div class="app">
                     <table id="weatherForecastTable">
@@ -72,6 +77,7 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
             </section>
         </section>
     </div>
