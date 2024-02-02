@@ -41,6 +41,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    padding-bottom: 5%;
 }
 .hour-date{
     display: flex;
