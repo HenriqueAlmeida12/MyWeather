@@ -4,7 +4,7 @@
 @import url('table.css');
 @import url('searchstyle.css');
 
-:root{
+:root {
     --font: 'Inter', sans-serif;
     --logo-white: #ffffff;
     --white: #ffffff;
@@ -14,20 +14,24 @@
     --box-background: linear-gradient(339deg, #00aaff00 5.49%, #ffffffa5 105.37%);
     --background-color: linear-gradient(.54deg, #98e4ff 05.49%, #1e55ff 105.37%);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     width: 100%;
     height: 100vh;
 }
-body{
+
+body {
     background: var(--background-color);
     font-family: var(--font);
 }
-.body-mask{
+
+.body-mask {
     height: 100vh;
     background-image: url('assets/background.png');
     background-position: bottom;

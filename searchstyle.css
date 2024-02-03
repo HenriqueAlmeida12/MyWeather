@@ -1,6 +1,6 @@
 /* background: linear-gradient(187deg, #152f2d, transparent); */
 
-.header_search-box{
+.header_search-box {
     padding: .75em;
     display: none;
     flex-direction: column;
@@ -12,16 +12,19 @@
     height: 100%;
     width: 100%;
 }
-.return{
+
+.return {
     display: inline-flex;
     gap: 10%;
     align-items: center;
     color: #00afff;
 }
-.track{
+
+.track {
     display: none;
 }
-.track-span{
+
+.track-span {
     background-image: url('assets/track.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -30,15 +33,18 @@
     height: 30px;
     padding-left: 2.5px;
 }
-.search-back{
+
+.search-back {
     display: block;
     border: none;
     background: none;
 }
-label{
+
+label {
     display: flex;
 }
-.search-back-span{
+
+.search-back-span {
     background-image: url('assets/back.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -46,13 +52,15 @@ label{
     width: 40px;
     height: 30px;
 }
-.input{
+
+.input {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
-.header_search-input2{
+
+.header_search-input2 {
     border: none;
     border-radius: 24px;
     color: #00afff;
@@ -66,24 +74,29 @@ label{
     background-position: 5%;
     box-shadow: 1px 3px 5px 2px #00dcff6e;
 }
-.header_search-input2::placeholder{
+
+.header_search-input2::placeholder {
     color: #00afff;
     text-align: center;
 }
-.header_search-input2:focus{
+
+.header_search-input2:focus {
     outline: none;
 }
+
 input[type="search"]::-webkit-search-clear-button {
     -webkit-appearance: none;
     appearance: none;
     display: none;
 }
+
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     appearance: none;
     display: none;
 }
-.reset-span{
+
+.reset-span {
     background-image: url('assets/trash.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -92,7 +105,8 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 30px;
     padding: 1px 2.5px 0 0;
 }
-.reset{
+
+.reset {
     background: none;
     border: none;
 }
