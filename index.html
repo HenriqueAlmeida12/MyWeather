@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script defer src="teste.js"></script>
+    <script src="teste.js"></script>
 </head>
 
 <body>
@@ -24,33 +24,34 @@
                     <input class="header_search-input" type="search" placeholder="Escolha sua localização.">
                 </div>
                 <div class="header-checkbox">
-                    <button onclick="changeDisplay()" class="weather-search" id="weather-searchid" type="button">
+                    <button v-on:click="changeSearch()" class="weather-search" id="weather-searchid" type="button">
                         <label class="weather-search_label" for="weather-searchid">
                             <span class="weather-search_span"></span>
                         </label>
                     </button>
-                    <section class="header_search-box">
+                    <section class="header_search-box" v-if="useSearch" :style="{ display: 'flex'}">
                         <div class="return">
-                            <button onclick="changeDisplay()" class="search-back" id="search-back" type="button">
+                            <button class="search-back" id="search-back" type="button">
                                 <label for="search-back">
-                                    <span class="search-back-span"></span>
+                                    <span class="search-back-span" v-on:click="changeSearch()"></span>
                                 </label>
                             </button>
                             <p>Meus locais:</p>
                         </div>
                         <div class="input">
-                            <button class="track" id="track" type="button">
+                            <button class="track" id="track" type="button" v-if="useSearch" :style="{ display: 'flex'}">
                                 <label for="track">
                                     <span class="track-span"></span>
                                 </label>
                             </button>
                             <div class="box-input">
-                                <input class="header_search-input2" type="search" placeholder="Escolha sua localização.">
+                                <input class="header_search-input2" type="search"
+                                    placeholder="Escolha sua localização.">
                             </div>
                             <button class="reset" id="reset-history" type="button">
-                            <label for="reset-history">
-                                <span class="reset-span"></span>
-                            </label>
+                                <label for="reset-history">
+                                    <span class="reset-span"></span>
+                                </label>
                         </div>
                     </section>
                     <input class="weather-input" id="weather-inputid" type="checkbox">
@@ -58,7 +59,7 @@
                         <span class="weather-input_span" v-on:click="changeTemperature()"></span>
                     </label>
                 </div>
-                
+
             </header>
             <section class="box">
                 <div class="box_local">
@@ -85,7 +86,7 @@
                     <p class="month-day">{{ new Date().getDate() }}</p>
                     <p>,&nbsp;</p>
                     <p class="hour">{{`${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, '0')}`
-                    }}</p>
+                        }}</p>
                 </div>
                 <div class="app">
                     <table id="weatherForecastTable">
@@ -105,20 +106,10 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            </section>
-        </section>
+        </div>
+    </section>
+    </section>
     </div>
-    <script>
-        var meuCheckbox = document.getElementById('weather-searchid');
-        var returnButton = document.getElementById('search-back');
-        var headerSearchBox = document.querySelector('.header_search-box')
-        function changeDisplay() {
-            console.log('click');
-            headerSearchBox.style.display = (headerSearchBox.style.display === 'flex') ? 'none' : 'flex';
-        }
-        ;
-    </script>
 </body>
 
 </html>
