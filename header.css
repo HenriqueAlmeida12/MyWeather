@@ -60,9 +60,11 @@ input[type="search"]::-webkit-search-cancel-button {
     display: none;
 }
 .weather-search{
-    display: none;
+    display: block;
+    background: none;
+    border: none;
 }
-.weather-search:active ~ .header_search-box{
+.weather-search:checked ~ .header_search-box{
     display: flex;
 }
 .weather-search_label{
@@ -71,7 +73,7 @@ input[type="search"]::-webkit-search-cancel-button {
     display: none   ;
     justify-content: flex-end;
     padding-top: 6px;
-    background-image: url(assets/earth.png);
+    background-image: url('assets/earth.png');
     background-size: 57.5%;
     background-repeat: no-repeat;
     background-position: center;

@@ -24,23 +24,26 @@
                     <input class="header_search-input" type="search" placeholder="Escolha sua localização.">
                 </div>
                 <div class="header-checkbox">
-                    <input class="weather-search" id="weather-searchid" type="checkbox">
-                    <label class="weather-search_label" for="weather-searchid">
-                        <span class="weather-search_span"></span>
-                    </label>
+                    <button onclick="changeDisplay()" class="weather-search" id="weather-searchid" type="button">
+                        <label class="weather-search_label" for="weather-searchid">
+                            <span class="weather-search_span"></span>
+                        </label>
+                    </button>
                     <section class="header_search-box">
                         <div class="return">
-                            <input class="search-back" id="search-back" type="checkbox">
-                            <label for="search-back">
-                                <span class="search-back-span"></span>
-                            </label>
+                            <button onclick="changeDisplay()" class="search-back" id="search-back" type="button">
+                                <label for="search-back">
+                                    <span class="search-back-span"></span>
+                                </label>
+                            </button>
                             <p>Meus locais:</p>
                         </div>
                         <div class="input">
-                            <input class="track" id="track" type="checkbox">
-                            <label for="track">
-                                <span class="track-span"></span>
-                            </label>
+                            <button class="track" id="track" type="button">
+                                <label for="track">
+                                    <span class="track-span"></span>
+                                </label>
+                            </button>
                             <div class="box-input">
                                 <input class="header_search-input2" type="search" placeholder="Escolha sua localização.">
                             </div>
@@ -106,6 +109,16 @@
             </section>
         </section>
     </div>
+    <script>
+        var meuCheckbox = document.getElementById('weather-searchid');
+        var returnButton = document.getElementById('search-back');
+        var headerSearchBox = document.querySelector('.header_search-box')
+        function changeDisplay() {
+            console.log('click');
+            headerSearchBox.style.display = (headerSearchBox.style.display === 'flex') ? 'none' : 'flex';
+        }
+        ;
+    </script>
 </body>
 
 </html>

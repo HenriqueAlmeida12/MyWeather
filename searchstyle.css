@@ -31,7 +31,9 @@
     padding-left: 2.5px;
 }
 .search-back{
-    display: none;
+    display: block;
+    border: none;
+    background: none;
 }
 label{
     display: flex;
@@ -44,10 +46,6 @@ label{
     width: 40px;
     height: 30px;
 }
-.header_search-box:has(> .return input:active) {
-    display: none; 
-}
-
 .input{
     display: flex;
     align-items: center;
