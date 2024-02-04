@@ -25,7 +25,8 @@
 .box_local-text{
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: row;
+    height: 57px;
 }
 .box_local-text h2{
     font-size: 3rem;
