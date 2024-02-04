@@ -53,15 +53,15 @@ const app = Vue.createApp({
             if (date.getHours() < 5 || date.getHours() > 18) {
                 this.imgUrl = 'assets/luna.png';
             } else{
-                this.imgUrl = 'assets/sunny.png';
+                this.imgUrl = '/assets/sunny.png';
             }
         }
     },
 
     beforeMount() {
         this.checkTimeDay();
-        this.findGeo();
         this.requestWeather();
+        this.findGeo();
     }
 })
 

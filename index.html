@@ -46,8 +46,7 @@
                                 </label>
                             </button>
                             <div class="box-input">
-                                <input class="header_search-input2" type="search"
-                                    placeholder="Choose your location.">
+                                <input class="header_search-input2" type="search" placeholder="Choose your location.">
                             </div>
                             <button class="reset" id="reset-history" type="button">
                                 <label for="reset-history">
@@ -74,9 +73,9 @@
                         </div>
                     </div>
                     <div class="temp-min-max">
-                    <p>25º</p>
-                    <p>15º</p>
-                </div>
+                        <p>{{ useFahrenheit ? userTemperature.maxTemperatureF : userTemperature.maxTemperatureC }}</p>
+                        <p>{{ useFahrenheit ? userTemperature.minTemperatureF : userTemperature.minTemperatureC }}</p>
+                    </div>
                 </div>
                 <div class="hour-date">
                     <p class="climate-status">{{ userTemperature.summary }}</p>
