@@ -2,10 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1% 2%;
+    padding: 2%;
     background: var(--box-background);
-    margin: 10% 15%;
-    border-radius: 30px;
+    margin: 100px 15%;
+    border-radius: 20px;
     box-shadow: var(--night-shadow);
     height: 60%;
 }
