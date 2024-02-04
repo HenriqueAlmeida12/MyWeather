@@ -73,9 +73,9 @@
                         </div>
                     </div>
                     <div class="temp-min-max">
-                        <p>{{ useFahrenheit ? userTemperature.maxTemperatureF : userTemperature.maxTemperatureC }} ᴹᵃˣ
+                        <p>{{ useFahrenheit ? userTemperature.maxTemperatureF : userTemperature.maxTemperatureC }}
                         </p>
-                        <p>{{ useFahrenheit ? userTemperature.minTemperatureF : userTemperature.minTemperatureC }} ᴹᶦⁿ
+                        <p>{{ useFahrenheit ? userTemperature.minTemperatureF : userTemperature.minTemperatureC }}
                         </p>
                     </div>
                 </div>
@@ -92,6 +92,11 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" v-for="item in lstTemperatures" :key="item.date">
+                            <div>
+                                <span>
+                                    <img :src="item.imgUrl">
+                                </span>
+                            </div>
                             <div>
                                 <span>Date:</span>
                                 <span>{{ item.date }}</span>
