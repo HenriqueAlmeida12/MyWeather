@@ -34,10 +34,9 @@
 .box_local-text h1{
     font-size: 1rem;
 }
-.box_local-text div{
+.temperature{
     display: flex;
-    font-size: 2.5rem;
-    align-items: flex-end;
+    align-items: baseline;
 }
 .temp-min-max{
     display: flex;
