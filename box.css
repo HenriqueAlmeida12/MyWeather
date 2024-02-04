@@ -9,6 +9,9 @@
     box-shadow: var(--night-shadow);
     height: 60%;
 }
+.local{
+    font-size: 1.25rem;
+}
 .box_local{
     display: inline-flex;
     width: max-content;
