@@ -21,11 +21,14 @@
     align-items: center;
     justify-content: space-around;
     white-space: nowrap;
+    color: var(--white);
+    text-shadow: 1px 1px 2px var(--black);
 }
 
 .swiper-slide:hover {
     transform: scale(1.15);
 }
+
 .imgsun {
     width: 40px;
 }
