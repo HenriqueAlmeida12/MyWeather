@@ -87,18 +87,6 @@ label {
     outline: none;
 }
 
-input[type="search"]::-webkit-search-clear-button {
-    -webkit-appearance: none;
-    appearance: none;
-    display: none;
-}
-
-input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-    display: none;
-}
-
 .reset-span {
     background-image: url('assets/trash.png');
     background-position: center;
