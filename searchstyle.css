@@ -69,10 +69,9 @@ label {
     border-radius: 24px;
     color: #00afff;
     font-size: 0.875rem;
-    padding: 10px 35px 10px 35px;
+    padding: 10px 8% 10px 8%;
     text-align: left;
     width: 70vw;
-    margin-top: 1.5%;
     background: url("assets/search-lupa.png") no-repeat left;
     background-size: 15px;
     background-position: 5%;
