@@ -26,18 +26,6 @@
 .swiper-slide:hover {
     transform: scale(1.15);
 }
-
-td {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-tbody {
-    display: flex;
-    justify-content: space-around;
-}
-
 .imgsun {
     width: 40px;
 }
