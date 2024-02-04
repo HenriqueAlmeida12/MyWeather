@@ -69,12 +69,14 @@
                             <h2 class="temperature-number">{{ useFahrenheit ? userTemperature.temperatureF :
                                 userTemperature.temperatureC }}</h2>
                             <h2>º</h2>
-                            <p class="celsius-fahrenheit">C</p>
+                            <p class="celsius-fahrenheit">{{ useFahrenheit ? 'F' : 'C'}}</p>
                         </div>
                     </div>
                     <div class="temp-min-max">
-                        <p>{{ useFahrenheit ? userTemperature.maxTemperatureF : userTemperature.maxTemperatureC }}</p>
-                        <p>{{ useFahrenheit ? userTemperature.minTemperatureF : userTemperature.minTemperatureC }}</p>
+                        <p>{{ useFahrenheit ? userTemperature.maxTemperatureF : userTemperature.maxTemperatureC }} ᴹᵃˣ
+                        </p>
+                        <p>{{ useFahrenheit ? userTemperature.minTemperatureF : userTemperature.minTemperatureC }} ᴹᶦⁿ
+                        </p>
                     </div>
                 </div>
                 <div class="hour-date">
