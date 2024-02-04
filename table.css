@@ -11,8 +11,8 @@
     width: 100%;
 }
 
-.swiper-slide {
-    display: flex;
+.swiper-slide{
+    display: flex !important;
     flex-direction: column;
     border-radius: 16px;
     padding: .5em 1em;
