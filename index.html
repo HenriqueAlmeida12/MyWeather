@@ -8,6 +8,9 @@
     <link rel="icon" type="image/x-icon" href="assets/partly-cloud.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
+    <script src="teste.js" defer></script>
 </head>
 
 <body>
@@ -78,7 +81,7 @@
                 <div class="hour-date">
                     <p class="climate-status">{{ userTemperature.summary }}</p>
                     <p>&nbsp;-&nbsp;</p>
-                    <p class="week-day">{{ new Date().toLocaleString('pt-br', {weekday:'long'}) }}</p>
+                    <p class="week-day">{{ new Date().toLocaleString('en-US', {weekday:'long'}) }}</p>
                     <p>&nbsp;</p>
                     <p class="month-day">{{ new Date().getDate() }}</p>
                     <p>,&nbsp;</p>
@@ -111,21 +114,6 @@
             </section>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
-    <script src="teste.js" defer></script>
-    <script defer>
-        const swiper = new Swiper('.swiper', {
-            speed: 400,
-            spaceBetween: 100,
-            slidesPerView: 3,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
 </body>
 
 </html>
