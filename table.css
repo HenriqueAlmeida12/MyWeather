@@ -3,6 +3,10 @@
     margin-top: 15%;
 }
 
+.swiper:hover {
+    cursor: grab;
+}
+
 #weatherForecastTable {
     width: 100%;
 }

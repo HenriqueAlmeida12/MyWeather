@@ -1,47 +1,68 @@
-$(document).ready(function () {
-    var app = new Vue({
-        el: '#app',
-        data: {
+document.addEventListener('DOMContentLoaded', function () {
+    swiper = new Swiper('.swiper', {
+        speed: 400,
+        spaceBetween: 100,
+        slidesPerView: 3,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+});
+
+const app = Vue.createApp({
+    data() {
+        return {
             lstTemperatures: [],
             useFahrenheit: false,
             userTemperature: {},
-            useSearch: false
-        },
-        mounted: function () {
-            this.requestWeather();
-            this.findGeo();
-        },
-        methods: {
-            requestWeather: function () {
-                $.get("https://musinx.duckdns.org:3002/WeatherForecast", (data, status) => {
+            userLocation: '',
+            useSearch: false,
+            imgUrl: ''
+        }
+    },
+
+    methods: {
+        requestWeather: function () {
+            fetch('https://musinx.duckdns.org:3002/WeatherForecast').then(response =>
+                response.text()).then(data => {
+                    data = JSON.parse(data);
+                    data.forEach(a => {
+                        const parsedDate = new Date(a.date);
+                        a.date = parsedDate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                    });
+                    this.userTemperature = data[0];
+                    data.shift();
                     this.lstTemperatures = data;
                 });
-            },
-            findGeo: function () {
-                const successCallback = (position) => {
-                    let latitude = position.coords.latitude;
-                    let longitude = position.coords.longitude;
-                    $.get(`https://musinx.duckdns.org:3002/LocalWeather?latitude=${latitude}&longitude=${longitude}`, (data, status) => {
-                        let x = data;
-                        $.get(`https://musinx.duckdns.org:3002/LocalWeatherInfos?country=${x}`, (data, status) => {
-                            let newTemperature = { date: data.last_updated, temperatureC: data.feelslike_c, temperatureF: data.feelslike_f, summary: data.condition.text, userLocation: x }
-                            this.userTemperature = newTemperature;
-                        });
-                    });
-                };
-
-                const errorCallback = (error) => {
-                    console.log(error);
-                };
-
-                navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-            },
-            changeTemperature: function () {
-                this.useFahrenheit = !this.useFahrenheit;
-            },
-            changeSearch: function () {
-                this.useSearch = this.useSearch === false ? true : false;
+        },
+        findGeo: function () {
+            fetch('https://musinx.duckdns.org:3002/LocalWeather').then(response => response.text()).then(data => {
+                this.userLocation = data;
+                console.log(data);
+            });
+        },
+        changeTemperature: function () {
+            this.useFahrenheit = !this.useFahrenheit;
+        },
+        changeSearch: function () {
+            this.useSearch = this.useSearch === false ? true : false;
+        },
+        checkTimeDay: function() {
+            let date = new Date();
+            if (date.getHours() < 5 || date.getHours() > 18) {
+                this.imgUrl = 'assets/luna.png';
+            } else{
+                this.imgUrl = 'assets/sunny.png';
             }
         }
-    });
-});
+    },
+
+    beforeMount() {
+        this.checkTimeDay();
+        this.findGeo();
+        this.requestWeather();
+    }
+})
+
+app.mount('#app');
