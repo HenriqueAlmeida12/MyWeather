@@ -6,7 +6,7 @@
     background: var(--box-background);
     margin: 10% 15%;
     border-radius: 30px;
-    box-shadow: 1px 8px 10px 0px #051b5f91;
+    box-shadow: var(--night-shadow);
     height: 60%;
 }
 .box_local{
