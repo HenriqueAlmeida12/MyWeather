@@ -11,7 +11,7 @@
     width: 100%;
 }
 
-tr {
+.swiper-slide {
     display: flex;
     flex-direction: column;
     border-radius: 16px;
@@ -23,7 +23,7 @@ tr {
     white-space: nowrap;
 }
 
-tr:hover {
+.swiper-slide:hover {
     transform: scale(1.15);
 }
 
@@ -43,7 +43,7 @@ tbody {
 }
 
 @media screen and (max-width:1000px) {
-    tr {
-        width: 100% !important;
+    .swiper-slide {
+        width: 100%;
     }
 }
