@@ -17,7 +17,8 @@ const app = Vue.createApp({
             useFahrenheit: false,
             userTemperature: {},
             userLocation: '',
-            useSearch: false
+            useSearch: false,
+            imgUrl: ''
         }
     },
 
@@ -46,10 +47,19 @@ const app = Vue.createApp({
         },
         changeSearch: function () {
             this.useSearch = this.useSearch === false ? true : false;
+        },
+        checkTimeDay: function() {
+            let date = new Date();
+            if (date.getHours() < 5 || date.getHours() > 18) {
+                this.imgUrl = 'assets/luna.png';
+            } else{
+                this.imgUrl = 'assets/sunny.png';
+            }
         }
     },
 
     beforeMount() {
+        this.checkTimeDay();
         this.findGeo();
         this.requestWeather();
     }
