@@ -92,23 +92,21 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" v-for="item in lstTemperatures" :key="item.date">
                             <div>
-                                <span>Date:</span>
+                                <!-- <span>Date:</span> -->
                                 <span>{{ item.date }}</span>
                             </div>
                             <div>
-                                <span>Temperature:</span>
+                                <!-- <span>Temperature:</span> -->
                                 <span>{{ useFahrenheit ? item.temperatureF : item.temperatureC }}</span>
                             </div>
                             <div>
-                                <span>Summary:</span>
+                                <!-- <span>Summary:</span> -->
                                 <span>{{ item.summary }}</span>
                             </div>
                         </div>
                     </div>
-                    <!-- Adicione Navegação -->
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
-                    <!-- Adicione a scrollbar -->
                     <div class="swiper-scrollbar"></div>
                 </div>
             </section>
