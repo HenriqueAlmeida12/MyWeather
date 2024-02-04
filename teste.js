@@ -50,6 +50,7 @@ const app = Vue.createApp({
                         a.date = parsedDate.toLocaleDateString('en-US', { weekday: 'long' });
                     });
                     this.userTemperature = data[0];
+                    this.imgUrl = data[0].imgUrl;
                     data.shift();
                     this.lstTemperatures = data;
                 });
