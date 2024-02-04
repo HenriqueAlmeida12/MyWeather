@@ -47,7 +47,7 @@ const app = Vue.createApp({
                     data = JSON.parse(data);
                     data.forEach(a => {
                         const parsedDate = new Date(a.date);
-                        a.date = parsedDate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                        a.date = parsedDate.toLocaleDateString('en-US', { weekday: 'long' });
                     });
                     this.userTemperature = data[0];
                     data.shift();
@@ -71,15 +71,15 @@ const app = Vue.createApp({
             if (date.getHours() < 5 || date.getHours() > 18) {
                 this.imgUrl = 'assets/luna.png';
             } else{
-                this.imgUrl = 'assets/sunny.png';
+                this.imgUrl = '/assets/sunny.png';
             }
         }
     },
 
     beforeMount() {
         this.checkTimeDay();
-        this.findGeo();
         this.requestWeather();
+        this.findGeo();
     }
 })
 
