@@ -62,10 +62,11 @@
             </header>
             <section class="box">
                 <div class="box_local">
-                    <img class="box_local-img" :src='imgUrl' alt="ensolarado">
+                    <h1 class="local">{{ userLocation }}</h1>
+                    
                     <div class="box_local-text">
-                        <h1 class="local">{{ userLocation }}</h1>
-                        <div>
+                        <img class="box_local-img" :src='imgUrl' alt="ensolarado">
+                        <div class="temperature">
                             <h2 class="temperature-number">{{ useFahrenheit ? userTemperature.temperatureF :
                                 userTemperature.temperatureC }}</h2>
                             <h2>º</h2>
