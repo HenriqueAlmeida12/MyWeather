@@ -115,7 +115,8 @@ input[type="search"]::-webkit-search-cancel-button {
 .weather-input_span {
     display: flex;
     background-image: url('assets/celsius.png');
-    background-size: 100%;
+    background-size: 85%;
+    background-position: center;
     background-repeat: no-repeat;
     width: 45px;
 }
