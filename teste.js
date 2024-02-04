@@ -29,7 +29,7 @@ const app = Vue.createApp({
                     data = JSON.parse(data);
                     data.forEach(a => {
                         const parsedDate = new Date(a.date);
-                        a.date = parsedDate.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                        a.date = parsedDate.toLocaleDateString('en-US', { weekday: 'long' });
                     });
                     this.userTemperature = data[0];
                     data.shift();
