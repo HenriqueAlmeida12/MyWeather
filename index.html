@@ -7,9 +7,7 @@
     <title>MyWeather</title>
     <link rel="icon" type="image/x-icon" href="assets/partly-cloud.png">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="teste.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -59,11 +57,10 @@
                         <span class="weather-input_span" v-on:click="changeTemperature()"></span>
                     </label>
                 </div>
-
             </header>
             <section class="box">
                 <div class="box_local">
-                    <img class="box_local-img" src="assets/sunny.png" alt="ensolarado">
+                    <img class="box_local-img" src="assets/sky assets/sunny.png" alt="ensolarado">
                     <div class="box_local-text">
                         <h1 class="local">{{ userTemperature.userLocation }}</h1>
                         <div>
@@ -88,28 +85,47 @@
                     <p class="hour">{{`${new Date().getHours()}:${String(new Date().getMinutes()).padStart(2, '0')}`
                         }}</p>
                 </div>
-                <div class="app">
-                    <table id="weatherForecastTable">
-                        <thead class="table-title">
-                            <th>Date</th>
-                            <th>Temperature</th>
-                            <th>Summary</th>
-                        </thead>
-                        <tbody>
-                            <tr class="swiper-slide" v-for="item in lstTemperatures" :key="item.date">
-                                <td>{{ item.date }}</td>
-
-                                <td>{{ useFahrenheit ? item.temperatureF : item.temperatureC }}</td>
-                                <td><img src="assets/sunny.png" class="imgsun" alt="sunny"></td>
-                                <td>{{ item.summary }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="item in lstTemperatures" :key="item.date">
+                            <div>
+                                <span>Date:</span>
+                                <span>{{ item.date }}</span>
+                            </div>
+                            <div>
+                                <span>Temperature:</span>
+                                <span>{{ useFahrenheit ? item.temperatureF : item.temperatureC }}</span>
+                            </div>
+                            <div>
+                                <span>Summary:</span>
+                                <span>{{ item.summary }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Adicione Navegação -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- Adicione a scrollbar -->
+                    <div class="swiper-scrollbar"></div>
                 </div>
+            </section>
         </div>
     </section>
-    </section>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
+    <script src="teste.js" defer></script>
+    <script defer>
+        const swiper = new Swiper('.swiper', {
+            speed: 400,
+            spaceBetween: 100,
+            slidesPerView: 3,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>
