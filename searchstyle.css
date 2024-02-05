@@ -133,5 +133,8 @@ label {
     .search-box-mask-night, .search-box-mask {
         padding: 10px 0;
     }
+    
+    html{
+        overflow: hidden;
     }
 }
