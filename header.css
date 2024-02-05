@@ -133,6 +133,7 @@ input[type="search"]::-webkit-search-cancel-button {
     background-position: center;
     background-repeat: no-repeat;
     width: 45px;
+    z-index: 1;
 }
 
 .weather-input_span-night {
@@ -142,6 +143,7 @@ input[type="search"]::-webkit-search-cancel-button {
     background-position: center;
     background-repeat: no-repeat;
     width: 45px;
+    z-index: 1;
 }
 
 .weather-input:checked~.weather-input_label .weather-input_span {

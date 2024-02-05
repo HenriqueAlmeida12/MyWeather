@@ -71,8 +71,8 @@ const app = Vue.createApp({
         checkTimeDay: function() {
             let date = new Date();
             if (date.getHours() < 5 || date.getHours() > 18) {
-                this.imgUrl = 'assets/sky assets/clear-night.png';
                 this.isNight = true;
+                this.imgUrl = 'assets/sky assets/clear-night.png';
                 this.logoUrl = 'assets/logon.png';
                 let backgroundimg = document.getElementById('clouds');
                 backgroundimg.classList.add('body-mask-night');
