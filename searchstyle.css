@@ -1,6 +1,5 @@
 /* background: linear-gradient(187deg, #152f2d, transparent); */
-.header_search-box-night{
-    padding: .75em;
+.header_search-box-night {
     display: none;
     position: absolute;
     right: 0%;
@@ -10,8 +9,7 @@
     z-index: 20;
 }
 
-.header_search-box{
-    padding: .75em;
+.header_search-box {
     display: none;
     position: absolute;
     right: 0%;
@@ -32,7 +30,7 @@
     width: 100%;
 }
 
-.search-box-mask-night{
+.search-box-mask-night {
     padding: .75em;
     display: flex;
     flex-direction: column;
@@ -129,4 +127,10 @@ label {
 .reset {
     background: none;
     border: none;
+}
+
+@media screen and (max-width: 992px) {
+    .search-box-mask-night, .search-box-mask {
+        padding: 0;
+    }
 }
