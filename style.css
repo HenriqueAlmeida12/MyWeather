@@ -10,12 +10,17 @@
     --font: 'Inter', sans-serif;
     --logo-white: #ffffff;
     --white: #ffffff;
+    --searchBoxColor: #ffffffb0;
+    --searchBoxTextBg: rgba(0, 0, 0, 0.13);
+    --gray: #6e6e6e;
     --logo-shadow: #00dcff78;
     --black: #000000;
     --transparent-table: #f0ffff66;
     --box-background: linear-gradient(339deg, #00aaff00 5.49%, #ffffffa5 105.37%);    --background-color: linear-gradient(.54deg, #98e4ff 05.49%, #1e55ff 105.37%);
     --background-color-night: linear-gradient(.54deg, #430636 05.49%, #030b23 105.37%);
     --night-shadow: 1px 8px 10px 0px #051b5f91;
+    --day-shadow: 1px 8px 10px 0px #808080;
+    --whiteSearchBoxTextBg: rgb(255 255 255 / 61%);
 }
 
 * {
