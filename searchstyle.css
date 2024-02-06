@@ -45,7 +45,15 @@
     display: inline-flex;
     gap: 10%;
     align-items: center;
-    color: #00afff;
+    color: var(--searchBoxColor);
+}
+
+.previous-locations {
+    color: var(--gray);
+}
+
+.previous-locations-night {
+    color: var(--white);
 }
 
 .track {
@@ -56,6 +64,16 @@
 
 .track-span {
     background-image: url('assets/track.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    width: 40px;
+    height: 30px;
+    padding-left: 2.5px;
+}
+
+.track-span-night {
+    background-image: url('assets/whitetrack.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 60%;
@@ -83,6 +101,15 @@ label {
     height: 30px;
 }
 
+.search-back-span-night {
+    background-image: url('assets/whiteback.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 40px;
+    height: 30px;
+}
+
 .input {
     display: flex;
     align-items: center;
@@ -94,19 +121,19 @@ label {
 .header_search-input2 {
     border: none;
     border-radius: 24px;
-    color: #00afff;
+    color: var(--gray);
     font-size: 0.875rem;
     padding: 10px 8% 10px 8%;
     text-align: left;
     width: 70vw;
-    background: url("assets/search-lupa.png") no-repeat left;
+    background: url("assets/lupa.png") no-repeat left;
     background-size: 0.875rem;
     background-position: 3%;
-    box-shadow: 1px 3px 5px 2px #00dcff6e;
+    box-shadow: var(--day-shadow);
 }
 
 .header_search-input2::placeholder {
-    color: #00afff;
+    color: var(--gray);
     text-align: center;
 }
 
@@ -114,8 +141,89 @@ label {
     outline: none;
 }
 
+.header_search-input2-night {
+    border: none;
+    border-radius: 24px;
+    color: var(--searchBoxColor);
+    font-size: 0.875rem;
+    padding: 10px 8% 10px 8%;
+    text-align: left;
+    width: 70vw;
+    background: url("assets/lupa.svg") no-repeat left;
+    background-size: 0.875rem;
+    background-position: 3%;
+    box-shadow: 1px 3px 5px 2px #ffffff59;
+}
+
+.header_search-input2-night::placeholder {
+    color: var(--searchBoxColor);
+    text-align: center;
+}
+
+.header_search-input2-night:focus {
+    outline: none;
+}
+
+.search-localization-outer-box {
+    background: var(--whiteSearchBoxTextBg);
+    position: absolute;
+    padding: 0 10px;
+    z-index: 25;
+    display: flex;
+    top: 50px;
+    align-items: center;
+    width: 45%;
+    gap: 20px;
+    justify-content: flex-start;
+    left: 27.45%;
+    text-decoration: none;
+}
+
+.search-localization {
+    background: var(--searchBoxTextBg);
+    position: absolute;
+    padding: 0 10px;
+    z-index: 25;
+    display: flex;
+    top: 100px;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    justify-content: flex-start;
+    left: 0%;
+    text-decoration: none;
+}
+
+#city {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000000c4;
+}
+
+#state {
+    color: var(--gray);
+}
+
+.country-flag {
+    width: 40px;
+}
+
+.search-history {
+    margin-left: auto;
+    width: 30px;
+}
+
 .reset-span {
     background-image: url('assets/trash.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    width: 42.5px;
+    height: 30px;
+    padding: 1px 2.5px 0 0;
+}
+
+.reset-span-night {
+    background-image: url('assets/whitetrash.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
