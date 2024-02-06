@@ -37,7 +37,10 @@ const app = Vue.createApp({
             useSearch: false,
             imgUrl: '',
             isNight: false,
-            logoUrl: ''
+            logoUrl: '',
+            searchSectionVisible: false,
+            inputText: '',
+            outerSearchSectionVisible: false
         }
     },
 
@@ -82,6 +85,12 @@ const app = Vue.createApp({
                 this.isNight = false;
                 this.logoUrl = 'assets/logo.png';
             }
+        },
+        toggleSearchSectionVisibility() {
+            this.searchSectionVisible = !this.searchSectionVisible;
+        },
+        toggleOuterSearchSectionVisibility() {
+            this.outerSearchSectionVisible = !this.outerSearchSectionVisible;
         }
     },
 
