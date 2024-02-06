@@ -22,7 +22,17 @@
                     <h1 class="header_logo-text">MyWeather</h1>
                 </div>
                 <div class="header_search">
-                    <input class="header_search-input" type="search" placeholder="Choose your location.">
+                    <input @click="toggleOuterSearchSectionVisibility" :class=" {'header_search-input-night': isNight, 'header_search-input': !isNight } " type="search" placeholder="Choose your location.">
+                    <a href="*" v-if="outerSearchSectionVisible" :class="{ 'search-localization-outer-box': outerSearchSectionVisible }">
+                        <img class="localization-icon country-flag" src="assets/brasil.png"
+                            alt="country flag">
+                        <div class="localization">
+                            <p id="city">Xique-Xique</p>
+                            <p id="state">Bahia</p>
+                        </div>
+                        <img class="localization-icon search-history" src="assets/history.png"
+                            alt="history">
+                    </a>
                 </div>
                 <div class="header-checkbox">
                     <button v-on:click="changeSearch()" class="weather-search" id="weather-searchid" type="button">
@@ -37,24 +47,34 @@
                             <div class="return">
                                 <button class="search-back" id="search-back" type="button">
                                     <label for="search-back">
-                                        <span class="search-back-span" v-on:click="changeSearch()"></span>
+                                        <span :class="{ 'search-back-span-night': isNight, 'search-back-span': !isNight }" v-on:click="changeSearch()"></span>
                                     </label>
                                 </button>
-                                <p>My previous locations:</p>
+                                <p :class="{ 'previous-locations-night': isNight, 'previous-locations': !isNight }">My previous locations:</p>
                             </div>
                             <div class="input">
                                 <button class="track" id="track" type="button">
                                     <label for="track">
-                                        <span class="track-span"></span>
+                                        <span :class="{ 'track-span-night': isNight, 'track-span': !isNight }"></span>
                                     </label>
                                 </button>
                                 <div class="box-input">
-                                    <input class="header_search-input2" type="search"
-                                        placeholder="Choose your location.">
+                                    <input @click="toggleSearchSectionVisibility" v-model="inputText"
+                                        :class="{ 'header_search-input2-night': isNight, 'header_search-input2': !isNight }" type="search" placeholder="Choose your location.">
+                                    <a href="*" v-if="searchSectionVisible" :class="{ 'search-localization': searchSectionVisible }">
+                                        <img class="localization-icon country-flag" src="assets/brasil.png"
+                                            alt="country flag">
+                                        <div class="localization">
+                                            <p id="city">Xique-Xique</p>
+                                            <p id="state">Bahia</p>
+                                        </div>
+                                        <img class="localization-icon search-history" src="assets/history.png"
+                                            alt="history">
+                                    </a>
                                 </div>
                                 <button class="reset" id="reset-history" type="button">
                                     <label for="reset-history">
-                                        <span class="reset-span"></span>
+                                        <span :class="{ 'reset-span-night': isNight, 'reset-span': !isNight }"></span>
                                     </label>
                             </div>
                         </div>
@@ -115,21 +135,13 @@
                                 <span>{{ useFahrenheit ? item.temperatureF : item.temperatureC }}º</span>
                             </div>
                             <div>
-                                 <!-- <span>Summary:</span> -->
+                                <!-- <span>Summary:</span> -->
                                 <span>{{ item.summary }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </div>
-        <div class="search-localization">
-            <img src="assets/brasil.png" alt="country flag">
-            <!-- <div class="localization">
-                <p id="city">Xique-Xique</p>
-                <p id="state">Bahia</p>
-            </div> -->
-            <img src="assets/history.png" alt="history">
         </div>
     </section>
 </body>
